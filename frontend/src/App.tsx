@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<NavBar />}>
             <Route index element={<HomePage />} />
-            <Route path='/product/:id' element={<ProductPage />} />
+            <Route path='product/:id' element={<ProductPage />} />
         </Route>
       </Routes>
 

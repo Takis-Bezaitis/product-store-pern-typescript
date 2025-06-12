@@ -2,8 +2,8 @@ import { create } from "zustand";
 import axios from "axios";
 import type { FormDataProps, ProductStore } from "../types/types";
 import toast from "react-hot-toast";
-
-const BASE_URL = "http://localhost:5000";
+console.log("import.meta.env.MODE...",import.meta.env.MODE)
+const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:5000" : "";
 
 export const useProductStore = create<ProductStore>((set, get) => ({
   products: [],
