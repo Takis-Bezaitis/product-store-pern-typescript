@@ -10,6 +10,14 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
+    env:
+      PGHOST: ${{ secrets.PGHOST }}
+      PGDATABASE: ${{ secrets.PGDATABASE }}
+      PGUSER: ${{ secrets.PGUSER }}
+      PGPASSWORD: ${{ secrets.PGPASSWORD }}
+      NODE_ENV: ${{ secrets.NODE_ENV }}
+      PORT: ${{ secrets.PORT }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -24,11 +32,10 @@ jobs:
           cd backend
           npm run build
 
-      # Uncomment and adjust if you add tests
-      # - name: Run backend tests
-      #   run: |
-      #     cd backend
-      #     npm test
+      - name: Run backend tests
+        run: |
+          cd backend
+          npm test
 
       # - name: Run frontend tests
       #   run: |
