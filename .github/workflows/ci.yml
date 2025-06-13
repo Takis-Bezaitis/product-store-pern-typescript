@@ -15,7 +15,7 @@ jobs:
       PGDATABASE: ${{ secrets.PGDATABASE }}
       PGUSER: ${{ secrets.PGUSER }}
       PGPASSWORD: ${{ secrets.PGPASSWORD }}
-      NODE_ENV: ${{ secrets.NODE_ENV }}
+      
       PORT: ${{ secrets.PORT }}
 
     steps:
